@@ -1,4 +1,4 @@
-FROM node:5.7.0-slim
+FROM node:5.9.1-slim
 
 VOLUME ["/data"]
 WORKDIR /data
