@@ -1,3 +1,10 @@
 #!/bin/bash
 
-docker run -it -v $(pwd):/data --rm chekote/node "echo pid1 > /dev/null && node $@"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+. "${DIR}"/lib/args.sh
+
+COMMAND="echo pid1 > /dev/null && node $ARGS"
+
+docker run -it -v $(pwd):/data --rm chekote/node "${COMMAND}"
+
