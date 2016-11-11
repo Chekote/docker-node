@@ -7,7 +7,10 @@ RUN apt-get update && \
     apt-get install -y git && \
     apt-get autoremove -y && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+    mkhomedir_helper node
+
+USER node
 
 VOLUME ["/data"]
 WORKDIR /data
