@@ -2,10 +2,6 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-. "${DIR}"/lib/args.sh
 . "${DIR}"/lib/tty.sh
 
-COMMAND="echo pid1 > /dev/null && node $ARGS"
-
-docker run -i${TTY} -v $(pwd):/data --rm chekote/npm "${COMMAND}"
-
+docker run -i${TTY} -v $(pwd):/data --rm chekote/node npm "$@"
