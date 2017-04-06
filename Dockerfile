@@ -22,8 +22,8 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* \
 
-VOLUME ["/data"]
-WORKDIR /data
+VOLUME ["/workdir"]
+WORKDIR /workdir
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
