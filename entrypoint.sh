@@ -20,4 +20,8 @@ export HOME=/home/user
 # Ensure home is owned by user (Docker may have created it as root when mounting volumes)
 chown user /home/user
 
+# Ensure workdir is owned and writeable by user
+chown user /workdir
+chmod 700 /workdir
+
 gosu user "$@"
