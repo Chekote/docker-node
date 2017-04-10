@@ -22,6 +22,9 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
 
+    # Delete the node user
+    userdel -r node && \
+
     # Ensure workdir exists
     mkdir /workdir
 
