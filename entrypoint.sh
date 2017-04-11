@@ -26,9 +26,5 @@ if [ "$USER_NAME" == "" ]; then
   chown ${USER_NAME} $HOME
 fi
 
-# Ensure workdir is owned and writeable by user
-chown ${USER_NAME} /workdir
-chmod 700 /workdir
-
 # Execute the command
 gosu ${USER_NAME} "$@"
