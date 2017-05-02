@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
 
     # Node Dependencies
-    apt-get install -y --no-install-recommends git && \
+    apt-get install -y --no-install-recommends git ssh && \
 
     # Fix -u may not run as fully supported user (no home, no /etc/passwd entry, etc). See entrypoint.sh
     apt-get install -y --no-install-recommends curl && \
