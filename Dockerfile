@@ -21,6 +21,7 @@ RUN apt-get update && \
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
+    rm -rf /var/cache/apt/* && \
 
     # Delete the node user
     userdel -r node && \
