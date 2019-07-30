@@ -10,20 +10,9 @@ USER_NAME=`getent passwd | awk -F: '$3 == '${USER_ID}' { print $1 }'`
 
 # Does the user already exist?
 if [ "$USER_NAME" == "" ]; then
-  # No, we need to create it.
-  USER_NAME=user
-
-  # Create the home folder if it doesn't already exist.
-  if [ ! -d "/home/user" ]; then
-    ARGS='-m'
-  fi
-
-  # Create the user.
-  useradd --shell /bin/bash -u ${USER_ID} ${ARGS} user
-  export HOME=/home/${USER_NAME}
-
-  # Ensure home is owned by user (Docker may have created it as root when mounting volumes)
-  chown ${USER_NAME} $HOME
+  # No, Set the id of nobody
+  USER_NAME=nobody
+  usermod -u $USER_ID $USER_NAME
 fi
 
 # Execute the command
