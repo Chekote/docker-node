@@ -10,7 +10,7 @@ RUN set -eux; \
 		dpkg \
 		gnupg \
 	; \
-	apk add shadow && \
+	apk add shadow; \
 	#
 	dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; \
 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch"; \
@@ -32,7 +32,7 @@ RUN set -eux; \
 	#
     # verify that the binary works
 	gosu --version; \
-	gosu nobody true && \
+	gosu nobody true; \
 	#
     # Ensure workdir exists
     mkdir /workdir
