@@ -1,4 +1,4 @@
-# chekote/node
+# chekote/node:{node version}-slim
 FROM node:slim
 
 ENV DEBIAN_FRONTEND noninteractive

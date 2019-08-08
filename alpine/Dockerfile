@@ -1,4 +1,4 @@
-# chekote/node
+# chekote/node:{node version}-alpine
 FROM node:alpine
 
 ENV GOSU_VERSION 1.11
