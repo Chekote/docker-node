@@ -15,5 +15,8 @@ if [ "$USER_NAME" == "" ]; then
   usermod -u $USER_ID $USER_NAME
 fi
 
+# Make sure node modules is part of the path.
+export PATH="$PATH:./node_modules/.bin"
+
 # Execute the command
 gosu ${USER_NAME} "$@"

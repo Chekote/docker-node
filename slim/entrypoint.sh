@@ -26,5 +26,8 @@ if [ "$USER_NAME" == "" ]; then
   chown ${USER_NAME} $HOME
 fi
 
+# Make sure node modules is part of the path.
+export PATH="$PATH:./node_modules/.bin"
+
 # Execute the command
 gosu ${USER_NAME} "$@"
