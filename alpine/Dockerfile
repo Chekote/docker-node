@@ -8,6 +8,7 @@ RUN set -eux; \
 	\
 	apk add --no-cache --virtual .gosu-deps \
 		dpkg \
+		git \
 		gnupg \
 	; \
 	apk add shadow; \
