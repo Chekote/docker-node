@@ -1,5 +1,5 @@
 # chekote/node:{node version}-alpine
-FROM node:alpine
+FROM node:lts-alpine
 
 ENV GOSU_VERSION 1.11
 

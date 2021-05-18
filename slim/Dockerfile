@@ -1,5 +1,5 @@
 # chekote/node:{node version}-slim
-FROM node:slim
+FROM node:lts-slim
 
 ENV DEBIAN_FRONTEND noninteractive
 
