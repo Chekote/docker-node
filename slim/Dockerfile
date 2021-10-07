@@ -1,33 +1,42 @@
+FROM debian:stretch-slim AS su-exec-builder
+
+RUN  set -eux; \
+     #
+     apt-get update; \
+     apt-get install -y --no-install-recommends ca-certificates curl; \
+     #
+     curl -o /usr/local/bin/su-exec.c https://raw.githubusercontent.com/ncopa/su-exec/master/su-exec.c; \
+     #
+     apt-get update; \
+     apt-get install -y --no-install-recommends gcc libc-dev; \
+     gcc -Wall /usr/local/bin/su-exec.c -o/usr/local/bin/su-exec; \
+     chown root:root /usr/local/bin/su-exec; \
+     chmod 0755 /usr/local/bin/su-exec;
+
 # chekote/node:{node version}-slim
 FROM node:lts-slim
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update && \
+COPY --from=su-exec-builder /usr/local/bin/su-exec /usr/local/bin/su-exec
+
+RUN set -eux; \
     #
     # Node Dependencies
-    apt-get install -y --no-install-recommends git ssh && \
-    #
-    # Fix -u may not run as fully supported user (no home, no /etc/passwd entry, etc). See entrypoint.sh
-    apt-get install -y --no-install-recommends curl && \
-    gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && \
-    curl -o /usr/local/bin/gosu -SL "https://github.com/tianon/gosu/releases/download/1.10/gosu-$(dpkg --print-architecture)"  && \
-    curl -o /usr/local/bin/gosu.asc -SL "https://github.com/tianon/gosu/releases/download/1.10/gosu-$(dpkg --print-architecture).asc"  && \
-    gpg --verify /usr/local/bin/gosu.asc  && \
-    rm /usr/local/bin/gosu.asc  && \
-    chmod +x /usr/local/bin/gosu  && \
+    apt-get update; \
+    apt-get install -y --no-install-recommends git ssh; \
     #
     # Cleanup
-    apt-get autoremove -y && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    rm -rf /var/cache/apt/* && \
+    apt-get autoremove -y; \
+    apt-get clean; \
+    rm -rf /var/lib/apt/lists/*; \
+    rm -rf /var/cache/apt/*; \
     #
     # Delete the node user
-    userdel -r node && \
+    userdel -r node; \
     #
     # Ensure workdir exists
-    mkdir /workdir
+    mkdir /workdir;
 
 VOLUME ["/workdir"]
 WORKDIR /workdir
