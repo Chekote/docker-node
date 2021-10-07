@@ -19,4 +19,4 @@ fi
 export PATH="$PATH:./node_modules/.bin"
 
 # Execute the command
-gosu ${USER_NAME} "$@"
+su-exec ${USER_NAME} "$@"
