@@ -6,7 +6,7 @@
 USER_ID=${LOCAL_USER_ID:-9001}
 
 # Get the username that is associated with the user id (if any)
-USER_NAME=`getent passwd | awk -F: '$3 == '${USER_ID}' { print $1 }'`
+USER_NAME=`getent passwd | awk -F: '$3 == '$USER_ID' { print $1 }'`
 
 # Does the user already exist?
 if [ "$USER_NAME" == "" ]; then
@@ -19,4 +19,4 @@ fi
 export PATH="$PATH:./node_modules/.bin"
 
 # Execute the command
-su-exec ${USER_NAME} "$@"
+su-exec $USER_NAME "$@"
