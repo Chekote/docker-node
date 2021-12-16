@@ -4,4 +4,4 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 . "${DIR}"/lib/tty.sh
 
-docker run -i${TTY} -v $(pwd):/workdir --rm chekote/node yarn "$@"
+docker run -i ${TTY} -v $(pwd):/workdir --rm chekote/node yarn "$@"

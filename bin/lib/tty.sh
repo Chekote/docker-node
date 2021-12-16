@@ -2,6 +2,6 @@
 
 TTY='';
 if [ -t 0 ] ; then
-  TTY=t;
+  TTY=-t;
 fi
 
