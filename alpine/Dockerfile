@@ -1,7 +1,7 @@
 # chekote/node:{node version}-alpine
 FROM node:lts-alpine
 
-# install gosu
+# install su-exec
 RUN set -eux; \
 	#
 	apk add --no-cache shadow su-exec; \
