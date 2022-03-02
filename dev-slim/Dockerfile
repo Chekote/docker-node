@@ -11,4 +11,9 @@ RUN set -eux; \
     apt-get remove -y; \
     apt-get autoremove -y; \
     apt-get clean; \
-    rm -rf /var/lib/apt/lists/*;
+    rm -rf /var/lib/apt/lists/*; \
+    #
+    # Add github.com to known hosts
+    mkdir /home/user/.ssh; \
+    ssh-keyscan -t rsa github.com >> /home/user/.ssh/known_hosts; \
+    chown -R user:user /home/user/.ssh; \
