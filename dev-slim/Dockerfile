@@ -1,4 +1,4 @@
-# chekote/node:{node version}-dev-alpine
+# chekote/node:{node version}-dev-slim
 FROM chekote/node:latest-slim
 
 # install gosu
