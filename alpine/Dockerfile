@@ -14,7 +14,12 @@ RUN set -eux; \
 	su-exec nobody true; \
 	#
     # Ensure workdir exists
-    mkdir /workdir
+    mkdir /workdir; \
+    #
+    # Make sure it all works
+    node --version; \
+    npm --version; \
+    yarn --version;
 
 VOLUME ["/workdir"]
 WORKDIR /workdir

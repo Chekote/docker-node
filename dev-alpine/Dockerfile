@@ -13,3 +13,9 @@ RUN set -eux; \
     mkdir /home/node/.ssh; \
     ssh-keyscan -t rsa github.com >> /home/node/.ssh/known_hosts; \
     chown -R node:node /home/node/.ssh; \
+    #
+    # Make sure the rest works
+    g++ --version; \
+    git --version; \
+    make --version; \
+    python3 --version;

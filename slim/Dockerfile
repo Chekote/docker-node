@@ -39,7 +39,12 @@ RUN set -eux; \
     userdel -r node; \
     #
     # Ensure workdir exists
-    mkdir /workdir;
+    mkdir /workdir; \
+    #
+    # Make sure it all works
+    node --version; \
+    npm --version; \
+    yarn --version;
 
 VOLUME ["/workdir"]
 WORKDIR /workdir

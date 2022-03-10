@@ -20,3 +20,9 @@ RUN set -eux; \
     mkdir /home/user/.ssh; \
     ssh-keyscan -t rsa github.com >> /home/user/.ssh/known_hosts; \
     chown -R user:user /home/user/.ssh; \
+    #
+    # Make sure the rest works
+    g++ --version; \
+    git --version; \
+    make --version; \
+    python3 --version;
