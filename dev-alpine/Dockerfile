@@ -4,7 +4,6 @@
 # us.gcr.io/chekote-56995/node:{node version}-dev-alpine
 FROM chekote/node:latest-alpine
 
-# install gosu
 RUN set -euxo pipefail; \
 	#
 	apk add --no-cache g++ git make openssh python3; \
