@@ -1,3 +1,4 @@
+# chekote/node:latest-dev-slim
 # chekote/node:{node version}-dev-slim
 FROM chekote/node:latest-slim
 

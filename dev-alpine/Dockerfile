@@ -1,3 +1,4 @@
+# chekote/node:latest-dev-alpine
 # chekote/node:{node version}-dev-alpine
 FROM chekote/node:latest-alpine
 

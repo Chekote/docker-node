@@ -13,6 +13,7 @@ RUN  set -eux; \
      chown root:root /usr/local/bin/su-exec; \
      chmod 0755 /usr/local/bin/su-exec;
 
+# chekote/node:latest-slim
 # chekote/node:{node version}-slim
 FROM node:lts-slim
 

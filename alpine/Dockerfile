@@ -1,3 +1,4 @@
+# chekote/node:latest-alpine
 # chekote/node:{node version}-alpine
 FROM node:lts-alpine
 
