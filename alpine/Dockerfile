@@ -5,7 +5,7 @@
 FROM node:lts-alpine
 
 # install su-exec
-RUN set -eux; \
+RUN set -euxo pipefail; \
 	#
 	apk add --no-cache shadow su-exec; \
 	#

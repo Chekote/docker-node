@@ -5,7 +5,7 @@
 FROM chekote/node:latest-alpine
 
 # install gosu
-RUN set -eux; \
+RUN set -euxo pipefail; \
 	#
 	apk add --no-cache g++ git make openssh python3; \
     #
