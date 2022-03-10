@@ -15,6 +15,8 @@ RUN  set -eux; \
 
 # chekote/node:latest-slim
 # chekote/node:{node version}-slim
+# us.gcr.io/chekote-56995/node:latest-slim
+# us.gcr.io/chekote-56995/node:{node version}-slim
 FROM node:lts-slim
 
 ENV DEBIAN_FRONTEND noninteractive
