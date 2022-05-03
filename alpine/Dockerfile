@@ -4,7 +4,11 @@ FROM node:lts-alpine
 
 # install su-exec
 RUN set -euxo pipefail; \
-	#
+    #
+    # Upgrade all packages \
+    apk update; \
+    apk upgrade; \
+    #
 	apk add --no-cache shadow su-exec; \
 	#
     # verify that the binary works

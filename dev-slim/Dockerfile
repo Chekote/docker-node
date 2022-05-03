@@ -5,7 +5,10 @@ FROM chekote/node:latest-slim
 # install gosu
 RUN set -eux; \
     #
+    # Node Dependencies
     apt-get update; \
+    apt-get upgrade -y; \
+    #
     apt-get install -y --no-install-recommends --no-install-suggests g++ git make python3; \
     #
     # Cleanup

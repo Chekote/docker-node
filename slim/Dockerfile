@@ -25,6 +25,9 @@ RUN set -eux; \
     #
     # Node Dependencies
     apt-get update; \
+    apt-get upgrade -y; \
+    #
+    # Node Dependencies
     apt-get install -y --no-install-recommends git ssh; \
     #
     # Cleanup

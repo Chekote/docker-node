@@ -3,6 +3,10 @@
 FROM chekote/node:latest-alpine
 
 RUN set -euxo pipefail; \
+    #
+    # Upgrade all packages \
+    apk update; \
+    apk upgrade; \
 	#
 	apk add --no-cache g++ git make openssh python3; \
     #
