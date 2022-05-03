@@ -1,7 +1,5 @@
 # chekote/node:latest-alpine
 # chekote/node:{node version}-alpine
-# us.gcr.io/chekote-56995/node:latest-alpine
-# us.gcr.io/chekote-56995/node:{node version}-alpine
 FROM node:lts-alpine
 
 # install su-exec

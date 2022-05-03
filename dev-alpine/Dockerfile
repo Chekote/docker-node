@@ -1,7 +1,5 @@
 # chekote/node:latest-dev-alpine
 # chekote/node:{node version}-dev-alpine
-# us.gcr.io/chekote-56995/node:latest-dev-alpine
-# us.gcr.io/chekote-56995/node:{node version}-dev-alpine
 FROM chekote/node:latest-alpine
 
 RUN set -euxo pipefail; \

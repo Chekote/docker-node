@@ -1,7 +1,5 @@
 # chekote/node:latest-dev-slim
 # chekote/node:{node version}-dev-slim
-# us.gcr.io/chekote-56995/node:latest-dev-slim
-# us.gcr.io/chekote-56995/node:{node version}-dev-slim
 FROM chekote/node:latest-slim
 
 # install gosu
