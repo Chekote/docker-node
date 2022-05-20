@@ -14,7 +14,7 @@ if [ "$USER_NAME" == "" ]; then
   USER_NAME=user
 
   # Create the home folder if it doesn't already exist.
-  if [ ! -d "/home/user" ]; then
+  if [ ! -d "/home/$USER_NAME" ]; then
     ARGS='-m'
   fi
 
