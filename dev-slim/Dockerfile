@@ -2,13 +2,13 @@
 # chekote/node:{node version}-dev-slim
 FROM chekote/node:latest-slim
 
-# install gosu
 RUN set -eux; \
     #
-    # Node Dependencies
+    # Upgrade all packages
     apt-get update; \
     apt-get upgrade -y; \
     #
+    # Node Dependencies
     apt-get install -y --no-install-recommends --no-install-suggests g++ git make python3; \
     #
     # Cleanup

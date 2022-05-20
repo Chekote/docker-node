@@ -23,7 +23,7 @@ COPY --from=su-exec-builder /usr/local/bin/su-exec /usr/local/bin/su-exec
 
 RUN set -eux; \
     #
-    # Node Dependencies
+    # Upgrade all packages
     apt-get update; \
     apt-get upgrade -y; \
     #

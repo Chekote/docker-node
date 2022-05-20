@@ -4,10 +4,11 @@ FROM chekote/node:latest-alpine
 
 RUN set -euxo pipefail; \
     #
-    # Upgrade all packages \
+    # Upgrade all packages
     apk update; \
     apk upgrade; \
-	#
+    #
+    # Node Dependencies
 	apk add --no-cache g++ git make openssh python3; \
     #
     # Add github.com to known hosts
