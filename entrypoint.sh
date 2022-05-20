@@ -9,7 +9,7 @@ USER_ID="${LOCAL_USER_ID:-9001}"
 USER_NAME=$(getent passwd | awk -F: '$3 == '$USER_ID' { print $1 }')
 
 # Does the user already exist?
-if [ "$USER_NAME" == "" ]; then
+if [ "$USER_NAME" = "" ]; then
   # No, Set the id of node
   USER_NAME=node
   usermod -u "$USER_ID" "$USER_NAME"
