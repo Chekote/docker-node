@@ -18,9 +18,9 @@ RUN set -eux; \
     rm -rf /var/lib/apt/lists/*; \
     #
     # Add github.com to known hosts
-    mkdir /home/user/.ssh; \
-    ssh-keyscan -t rsa github.com >> /home/user/.ssh/known_hosts; \
-    chown -R user:user /home/user/.ssh; \
+    mkdir /home/node/.ssh; \
+    ssh-keyscan -t rsa github.com >> /home/node/.ssh/known_hosts; \
+    chown -R node:node /home/node/.ssh; \
     #
     # Make sure the rest works
     g++ --version; \

@@ -36,9 +36,6 @@ RUN set -eux; \
     rm -rf /var/lib/apt/lists/*; \
     rm -rf /var/cache/apt/*; \
     #
-    # Delete the node user
-    userdel -r node; \
-    #
     # Ensure workdir exists
     mkdir /workdir; \
     #
