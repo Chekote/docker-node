@@ -8,8 +8,13 @@ RUN set -eux; \
     apt-get update; \
     apt-get upgrade -y; \
     #
-    # Node Dependencies
-    apt-get install -y --no-install-recommends --no-install-suggests g++ git make python3; \
+    # Node Dev Dependencies
+    apt-get install -y --no-install-recommends --no-install-suggests \
+        g++ \
+        git \
+        ssh \
+        make \
+        python3; \
     #
     # Cleanup
     apt-get remove -y; \

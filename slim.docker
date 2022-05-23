@@ -28,9 +28,6 @@ RUN set -eux; \
     apt-get upgrade -y; \
     #
     apt-get install -y --no-install-recommends \
-        # Node Dependencies
-        git \
-        ssh \
         #
         # CA Certificates
         ca-certificates; \
