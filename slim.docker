@@ -27,8 +27,13 @@ RUN set -eux; \
     apt-get update; \
     apt-get upgrade -y; \
     #
-    # Node Dependencies
-    apt-get install -y --no-install-recommends git ssh; \
+    apt-get install -y --no-install-recommends \
+        # Node Dependencies
+        git \
+        ssh \
+        #
+        # CA Certificates
+        ca-certificates; \
     #
     # Cleanup
     apt-get autoremove -y; \
