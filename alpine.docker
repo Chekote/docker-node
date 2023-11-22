@@ -18,8 +18,12 @@ RUN set -euxo pipefail; \
     # Ensure workdir exists
     mkdir /workdir; \
     #
+    # Fix for node-gyp errors
+    yarn global add node-gyp; \
+    #
     # Make sure it all works
     node --version; \
+    node-gyp --version; \
     npm --version; \
     yarn --version;
 
