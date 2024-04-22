@@ -14,6 +14,9 @@ RUN set -euxo pipefail; \
     # verify that the binary works
 	su-exec; \
 	su-exec nobody true; \
+    #
+    # Switch to latest stable yarn
+    yarn set version stable; \
 	#
     # Ensure workdir exists
     mkdir /workdir; \
