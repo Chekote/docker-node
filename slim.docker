@@ -1,4 +1,4 @@
-FROM debian:stretch-slim AS su-exec-builder
+FROM debian:stable-slim AS su-exec-builder
 
 RUN  set -eux; \
      #
