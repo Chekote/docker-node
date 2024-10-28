@@ -1,5 +1,6 @@
 # chekote/node:latest-cypress-slim
 # chekote/node:{node version}-cypress-slim
+# chekote/node:{node version}-yarn{yarn version}-cypress-slim
 FROM chekote/node:latest-dev-slim
 
 RUN set -eux; \

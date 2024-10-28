@@ -1,5 +1,6 @@
 # chekote/node:latest-dev-slim
 # chekote/node:{node version}-dev-slim
+# chekote/node:{node version}-yarn{yarn-version}-dev-slim
 FROM chekote/node:latest-slim
 
 RUN set -eux; \
