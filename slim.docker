@@ -18,7 +18,7 @@ RUN  set -eux; \
 # chekote/node:{node version}-yarn{yarn-version}-slim
 FROM node:lts-slim
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 COPY --from=su-exec-builder /usr/local/bin/su-exec /usr/local/bin/su-exec
 
