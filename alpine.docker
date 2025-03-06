@@ -1,6 +1,9 @@
 # chekote/node:latest-alpine
 # chekote/node:{node version}-alpine
-FROM node:lts-alpine
+ARG YARN_VERSION=stable
+ARG NODE_VERSION=lts
+
+FROM node:${NODE_VERSION}-alpine
 
 # install su-exec
 RUN set -euxo pipefail; \
@@ -16,7 +19,7 @@ RUN set -euxo pipefail; \
 	su-exec nobody true; \
     #
     # Switch to latest stable yarn
-    yarn set version stable; \
+    yarn set version $YARN_VERSION; \
 	#
     # Ensure workdir exists
     mkdir /workdir; \
