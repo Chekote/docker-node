@@ -29,7 +29,6 @@ RUN set -euxo pipefail; \
     npm --version; \
     yarn --version;
 
-VOLUME ["/workdir"]
 WORKDIR /workdir
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh

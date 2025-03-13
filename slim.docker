@@ -50,7 +50,6 @@ RUN set -eux; \
     npm --version; \
     yarn --version;
 
-VOLUME ["/workdir"]
 WORKDIR /workdir
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
