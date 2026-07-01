@@ -5,6 +5,8 @@ ARG NODE_VERSION=lts
 
 FROM node:${NODE_VERSION}-alpine
 
+ARG YARN_VERSION
+
 # install su-exec
 RUN set -euxo pipefail; \
     #
