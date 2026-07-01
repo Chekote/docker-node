@@ -1,5 +1,6 @@
 # chekote/node:latest-alpine
 # chekote/node:{node version}-alpine
+# chekote/node:{node version}-yarn{yarn version}-alpine
 ARG YARN_VERSION=stable
 ARG NODE_VERSION=lts
 
